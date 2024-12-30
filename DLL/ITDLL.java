@@ -83,14 +83,23 @@ public class ITDLL {
 
         Node temp  = head;
 
+        // traverse to the last node
         while(temp.next != null)
         {
             temp  =  temp.next;
 
         }
+
+        // create the new node
         Node nn = new Node(data);
+
+        // points to null
         nn.next = null;
+
+        // points to temp
         nn.back = temp;
+
+        //  temp points to the new node
         temp.next  = nn;
 
 

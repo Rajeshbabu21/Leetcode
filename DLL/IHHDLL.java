@@ -66,12 +66,15 @@ public class IHHDLL {
 
     public static Node Inserthead(Node head,int data){
 
+        // if the list is empty
         if(head == null)
         {
+            // create the new node
             Node nn =new Node(data,null,null);
             return  nn;
         }
 
+        // if it is not create the new node 
         Node temp = new Node(data);
 
         temp.next = head;

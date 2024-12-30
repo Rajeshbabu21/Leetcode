@@ -65,12 +65,15 @@ public class IKBDLL {
 
     public static Node Insertkthb(Node head,int data,int k){
 
+        //if the list is empty
         if(head == null)
         {
             Node nn =new Node(data,null,null);
             return  nn;
         }
 
+
+        //  k is 1
         if(k == 1)
         {
              Node nn  = new Node(data);
@@ -84,6 +87,7 @@ public class IKBDLL {
 
         }
 
+        // otherwise
         Node temp  = head;
         int count = 0;
         Node prev = head;
@@ -92,6 +96,7 @@ public class IKBDLL {
         {
             count ++;
 
+            // if the count is equal to k that is temp in the kth position
             if(count == k)
             {
                 Node nn = new Node(data);

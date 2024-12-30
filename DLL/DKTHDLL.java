@@ -71,11 +71,13 @@ public class DKTHDLL {
      Node temp = head;
      int count = 0;
 
+    //  if having one or nothing in the list
      if (head == null || head.next == null)
      {
         return null;
      }
 
+    //  if the length the k val is 1
      if(k == 1)
      {
         head = head.next;
@@ -85,6 +87,7 @@ public class DKTHDLL {
         return head;
      }
      
+    //  for the last element
      if(k == 8)
      {
           temp = head;
@@ -105,6 +108,8 @@ public class DKTHDLL {
          
          
      }
+
+    //  k is between 1 and 8
 
      while(temp != null)
      {

@@ -64,16 +64,23 @@ public class DTDLL {
 
     public static Node Deletetail(Node head){
 
+
+    // remember the head
      Node prev = head;
 
+    //  don't tamper the head
      Node temp = head;
 
+    // traverse to the last node
      while(temp.next != null)
      {
       temp  = temp.next;
      }
 
+    //  point the previous
      prev = temp.back;
+
+    //  make it as the null
      prev.next = null;
      temp.back = null;
 

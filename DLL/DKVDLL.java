@@ -66,25 +66,30 @@ public class DKVDLL {
 
     public static Node Deletekthval(Node head,int k){
 
+    // initialize the pointers becoz ot is useful
      Node prev = head;
      Node front = head;
      Node temp = head;
 
      
 
-     
+    //  it is the last element does'n have the next element
      if(front == null )
      {
           temp = head
           prev  = head;
          
+        //   stop last before the element
          while(temp.next != null)
          {
              temp = temp.next;
              
          }
          
+        //  assign the pointer 
          prev = temp.back;
+
+        //  make it as the null
          prev.next = null;
          temp.back = null;
          
@@ -96,9 +101,11 @@ public class DKVDLL {
      while(temp != null)
      {
 
+
         if(  temp.data ==  k)
 
         {
+            // same as before
             prev  = temp.back;
             front  = temp.next;
             prev.next = front;

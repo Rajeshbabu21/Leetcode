@@ -59,9 +59,13 @@ public class DHDLL {
 
     public static Node Deletehead(Node head){
 
+    // remenber the head
      Node prev = head;
 
+    //  move the head to next node
      head = head.next;
+
+    //  make it as the null
      head.back = null;
      prev.next = null;
 
