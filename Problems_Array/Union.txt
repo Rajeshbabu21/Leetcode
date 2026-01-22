@@ -1,0 +1,38 @@
+class Solution {
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+        // code here
+        Map<Integer,Integer> ans = new HashMap<>();
+        ArrayList<Integer> ans1 = new ArrayList<>();
+        
+        int alen = a.length;
+        int blen = b.length;
+        
+        for(int i=0;i<alen;i++)
+        {
+            if(ans.containsKey(a[i]))
+            {
+                
+            }
+            else{
+                ans.put(a[i],1);
+            }
+        }
+        
+        for(int i=0;i<blen;i++)
+        {
+            if(ans.containsKey(b[i]))
+            {
+                
+            }
+            else{
+                ans.put(b[i],1);
+            }
+        }
+        
+        for (int key : ans.keySet()) {
+            ans1.add(key);
+        }
+        
+        return ans1;
+    }
+}
