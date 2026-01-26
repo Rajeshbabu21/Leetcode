@@ -1,0 +1,27 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        k = k % n;
+        int l = k;
+        ArrayList<Integer> temp = new ArrayList<>();
+        while(l > 0)
+        {
+            temp.add(nums[n-l]);
+            l=l-1;
+        }
+       
+        for (int j = n - k - 1; j >= 0; j--) {
+            nums[j + k] = nums[j];
+        }
+
+        int index = 0;
+        for(int m=0;m<k;m++)
+        {
+            nums[m] = temp.get(index);
+            index+=1;
+        }
+
+
+        
+    }
+}
