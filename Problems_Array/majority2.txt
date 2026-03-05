@@ -30,7 +30,7 @@ class Solution {
                 cnt2--;
             }
         }
-
+// actul count 
         cnt1 = 0; cnt2 = 0; 
         for (int i = 0; i < n; i++) {
             if (nums[i] == el1) cnt1++; 
