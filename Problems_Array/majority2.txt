@@ -10,7 +10,7 @@ class Solution {
 
         for(int i=0;i<;i++)
         {
-            if(cnt1 ==0 && el2 != nums[i])
+            if(cnt1 == 0 && el2 != nums[i])
             {
                 cnt1 +=1;
                 el1 = nums[i];
