@@ -1,8 +1,5 @@
-lower bound  >= smallest index >= x
-upper bound > smalles > x
+ceil   index >= x
 
-floor larget no <= x
-ceil smallest >= x 
 
 
 class Solution {
@@ -17,7 +14,7 @@ class Solution {
             int mid = (low+high)/2;
             if(nums[mid] >= target)
             {
-                ans = mid;
+                ans = mid[arr];
                 high = mid-1;
             }
             else{

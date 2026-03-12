@@ -1,8 +1,5 @@
 lower bound  >= smallest index >= x
-upper bound > smalles > x
 
-floor larget no <= x
-ceil smallest >= x 
 
 
 class Solution {
