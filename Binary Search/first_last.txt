@@ -1,0 +1,63 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+
+int first = findceilstarting(nums,target);
+int last = findfloorending(nums,target);
+if (first == -1 || first >= nums.length || nums[first] != target) {
+            return new int[]{-1, -1};
+        }
+return new int[]{first,last};
+
+        
+    }
+// small = ceil = starting
+     public int findceilstarting(int[] nums,int target)
+        {
+            int n = nums.length;
+            int startingans = -1;
+            int low = 0;
+            int high = n-1;
+
+            while(low <= high)
+            {
+                int mid = (low + high) / 2;
+
+                if(nums[mid] >= target)
+                {
+                    startingans = mid;
+                    high = mid-1;
+                }
+                else{
+                    low = mid+1;
+                }
+            }
+
+            return startingans;
+        }
+
+// floor ending point largest
+        public int findfloorending(int[] nums,int target)
+        {
+            int n = nums.length;
+            int endingans = -1;
+            int low = 0;
+            int high = n-1;
+
+            while(low <= high)
+            {
+                int mid = (low + high) / 2;
+
+                if(nums[mid] <= target)
+                {
+                    endingans = mid;
+                    low = mid+1;
+                }
+                else{
+                    high = mid-1;
+                }
+            }
+
+            return endingans;
+
+        }
+}
