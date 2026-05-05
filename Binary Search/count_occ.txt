@@ -4,9 +4,10 @@ class Solution {
 int first = findceilstarting(nums,target);
 int last = findfloorending(nums,target);
 if (first == -1 || first >= nums.length || nums[first] != target) {
-            return new int[]{-1, -1};
+            return 0;
         }
-return new int[]{first,last};
+        int count = last - first +1 ;
+return count;
 
         
     }
