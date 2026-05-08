@@ -1,0 +1,42 @@
+sorted left or right take the min el and and cut the half
+
+class Solution {
+    public int findMin(int[] nums) {
+        int ans = Integer.MAX_VALUE;
+        int n = nums.length;
+        int low =  0;
+        int high = n-1;
+
+        while(low <= high)
+        {
+            int mid = (low + high) / 2;
+            
+            // left 
+            if(nums[low] <= nums[mid])
+            {
+                 // ans = Math.min(ans,nums[low]);
+                if(nums[low] < ans)
+                {
+                    ans = nums[low]
+                    index = low;
+                }
+                low = mid+1;
+            }
+
+            // right
+            else{
+                // ans = Math.min(ans,nums[mid]);
+                if(nums[mid] < ans)
+                {
+                    ans = nums[mid];
+                    index = mid;
+                }
+                high = mid -1;
+            }
+        }
+
+        return index;
+
+
+    }
+}

@@ -1,0 +1,41 @@
+// low will always points to the not possible answer
+// high will points to the possible answer
+
+int n = 3
+int m = 27
+
+
+class Solution {
+    public int findsqrt(int n,int m) {
+        int low = 1;
+        int high = m;
+        ans= -1;
+
+        while(low <= high)
+        {
+            int mid = (low + high) / 2;
+            int power = (int)Math.pow(mid,n);
+            
+            if(power == m)
+            {
+                return mid;
+            }
+
+            if(pow > m)
+            {
+                high = mid -1;
+            }
+
+
+            else{
+                low = mid +1;
+
+            }
+
+            
+
+
+    }
+    return -1;
+    }
+}

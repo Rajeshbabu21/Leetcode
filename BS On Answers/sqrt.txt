@@ -1,0 +1,32 @@
+// low will always points to the not possible answer
+// high will points to the possible answer
+
+
+class Solution {
+    public int findsqrt(int n) {
+        int low = 1;
+        int high = n;
+        ans= -1;
+
+        while(low <= high)
+        {
+            int mid = (low + high) / 2;
+            
+            if(mid * mid <= n)
+            {
+                ans = mid;
+                low = mid +1;
+            }
+
+            // right
+            else{
+                high = mid-1;
+                
+        }
+
+        return ans or high;
+
+
+    }
+    }
+}
