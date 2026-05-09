@@ -1,0 +1,137 @@
+class Solution {
+    public int smallestDivisor(int[] nums, int threshold) {
+        int low = 1;
+        int high = findmax(nums);
+        int ans = -1;
+
+        while(low <= high)
+        {
+            int mid = low + (high - low) / 2;
+
+            boolean divisor = finddivisor(nums,mid,threshold);
+
+            if(divisor == true)
+            {
+                ans = mid;
+                high = mid -1;
+
+            }
+
+            else{
+                low = mid +1;
+            }
+
+
+        }
+
+        return ans;
+
+
+        
+    }
+
+    public boolean finddivisor(int[] nums,int mid,int threshold)
+    {
+        int divisor = 0;
+        int n = nums.length;
+        for(int i=0;i<n;i++)
+        {
+            divisor += (int)Math.ceil((double)nums[i] / mid);
+            // divisor += (nums[i] + mid - 1) / mid;
+        }
+
+        if(divisor <= threshold)
+        {
+            return true;
+        }
+            
+        else{
+            return false;
+        }
+
+        
+    }
+
+    public int findmax(int[] nums)
+    {
+        int n = nums.length;
+        int max = Integer.MIN_VALUE;
+
+        for(int num :nums)
+        {
+            if(num > max)
+            {
+                max = num;
+            }
+        }
+
+        return max;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// brute force
+class Solution {
+    public int smallestDivisor(int[] nums, int threshold) {
+
+        int n = nums.length;
+        int ans =-1;
+
+        int high = maxfunction(nums);
+
+        for(int i=1;i<=high;i++)
+        {
+            boolean divisor = finddivisor(nums,i,threshold);
+
+            if(divisor == true)
+            {
+                ans = i;
+            }
+        }
+
+        retrun ans;
+        
+    }
+
+    public boolean finddivisor(int[] nums,int num,int threshold)
+    {
+        int divisor = 0;
+        int n = nums.length;
+        for(int i=0;i<n;i++)
+        {
+            divisor += (int)Math.ceil((double)nums[i] / num);
+        }
+
+        if(divisor <= threshold)
+        {
+            retrun true;
+        }
+
+        retrun false
+    }
+
+    public int maxfunction(int[] nums)
+    {
+        int n = nums.length;
+        int max = Integer.MIN_VALUE;
+
+        for(int num:nums){
+            if(num > max)
+            {
+                max = nums[i];
+            }
+        }
+
+        return max;
+    }
+}
