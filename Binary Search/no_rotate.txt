@@ -1,4 +1,4 @@
-sorted left or right take the min el and and cut the half
+min element = no of rotate 
 
 class Solution {
     public int findMin(int[] nums) {

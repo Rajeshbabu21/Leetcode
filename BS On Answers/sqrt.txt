@@ -1,5 +1,6 @@
 // low will always points to the not possible answer
 // high will points to the possible answer
+// vice versa 
 
 
 class Solution {
@@ -15,11 +16,15 @@ class Solution {
             if(mid * mid <= n)
             {
                 ans = mid;
+
+                // we need highest
                 low = mid +1;
             }
 
             // right
             else{
+
+                // if if element is greater
                 high = mid-1;
                 
         }

@@ -1,0 +1,131 @@
+class Solution {
+    public int minDays(int[] bloomDay, int m, int k) {
+
+        int low = minfunction(bloomDay);
+        int high = maxfunction(bloomDay);
+
+        int ans = -1;
+        int n = bloomDay.length;
+
+        if(n < m *k )
+        {
+            return ans;
+        }
+
+        while(low <= high)
+        {
+            int mid = low + (high - low) / 2;
+            
+
+            if(possible(bloomDay,mid,m,k) == true){
+                ans = mid;
+                // smaller 
+                high = mid -1;
+            }
+
+            else{
+                low = mid +1;
+
+            }
+        }
+
+        return ans;
+
+
+        
+    }
+
+    public int minfunction(int[] bloomDay)
+    {
+        int min = Integer.MAX_VALUE;
+        int n = bloomDay.length;
+
+        for(int bloom:bloomDay)
+        {
+            if(bloom < min)
+            {
+                min = bloom;
+            }
+        }
+
+        return min;
+    }
+
+    public int maxfunction(int[] bloomDay)
+    {
+        int max = Integer.MIN_VALUE;
+        int n = bloomDay.length;
+
+        for(int bloom:bloomDay)
+        {
+            if(bloom > max)
+            {
+                max = bloom;
+            }
+        }
+
+        return max;
+    }
+
+    public boolean possible(int[] bloomDay,int  mid,int m,int k )
+    {
+        int count = 0;
+        int bq = 0;
+        int n = bloomDay.length;
+
+        for(int i=0;i<n;i++)
+        {
+            if(bloomDay[i] <= mid)
+            {
+                count ++;
+                
+            }
+
+            else{
+                bq += (int)(count / k);
+                count  =0;
+            }
+        }
+        bq += (int)(count / k);
+
+// making more bq if also valid 
+        if(bq >= m)
+        {
+            return true;
+        
+        }
+
+        else{
+            return false;
+        }
+    }
+}
+
+
+
+
+
+// brute force 
+
+
+ int low = minfunction(bloomDay);
+        int high = maxfunction(bloomDay);
+
+        int ans = -1;
+        int n = bloomDay.length;
+
+        if(n < m *k )
+        {
+            return ans;
+        }
+for(i = min ,i<max;i++;)
+{
+    //check the function in the optimal code 
+    if(possible(bloomDay,i,m,k) == true){
+        ans = i;
+    }
+
+
+}
+
+return -1;
