@@ -52,7 +52,7 @@ class Solution {
         for(int i=0;i<n;i++)
         {
             // total += (piles[i] + mid-1) / mid ;
-            total += (piles[i] + (long)mid - 1) / mid;
+            total += (piles[i] + mid - 1) / mid;
             
 
         }
