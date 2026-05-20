@@ -1,0 +1,139 @@
+Given an array nums of n integers, where nums[i] represents the number of pages in the i-th book, and an integer m representing the number of students, allocate all the books to the students so that each student gets at least one book, each book is allocated to only one student, and the allocation is contiguous.
+
+
+
+Allocate the books to m students in such a way that the maximum number of pages assigned to a student is minimized. If the allocation of books is not possible, return -1.
+
+
+Example 1
+
+Input: nums = [12, 34, 67, 90], m=2
+
+Output: 113
+
+Explanation: The allocation of books will be 12, 34, 67 | 90. One student will get the first 3 books and the other will get the last one.
+
+
+class Solution {
+    public int findPages(int[] nums, int m) {
+        int low = maxfunction(nums);
+        int high = sumfunction(nums);
+        int ans =-1;
+        int n= nums.length;
+
+
+        if(n < m)
+        {
+            return -1;
+        }
+
+        while(low <= high)
+        {
+            int mid = (low + high) /2 ;
+
+            int  findingthpage = findingthpagefunction(nums,mid);
+
+            if(findingthpage <= m)
+            {
+                ans = mid;
+                // use the hint that m < namma count oda 3 < 2 the value is very bigger 
+                high = md -1;
+            }
+
+            else{
+
+                // use the hint that m < namma count oda 3 < 2 the value is very smaller 
+ 
+                low = mid  + 1;
+            }
+        }
+
+        return ans;
+
+   
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution {
+
+    public int maxfunction(int[] nums)
+    {
+        int n = nums.legth;
+        int max = Integer.MIN_VALUE;
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i] > max)
+            {
+                max= nums[i];
+            }
+        }
+
+        return max;
+    }
+
+    public int sumfunction(int[] nums)
+    {
+        int sum = 0;
+        for(int arr:nums)
+        {
+            sum +=arr;
+        }
+        return sum;
+    }
+
+    public int findingthpage(int[] nums,int i)
+    {
+        int pages = 0;
+        int book = 1;
+        int n= nums.length;
+
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]  + pages > i)
+            {
+                book+=1;
+                sum =num[i];
+            }
+
+            else{
+                sum+=nums[i];
+            }
+        }
+
+        return books;
+
+    }
+
+    public int findPages(int[] nums, int m) {
+        int low = maxfunction(nums);
+        int high = sumfunction(nums);
+        int ans =-1;
+        
+
+        for(int i=low;i<=high;i++)
+        {
+            int boolean findingthpage = findingthpagefunction(nums,i);
+
+            if(findingthpage <= m)
+            {
+                ans = i;
+                break
+            }
+        }
+
+        return ans;
+   
+    }
+}
