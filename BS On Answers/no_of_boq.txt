@@ -83,12 +83,12 @@ class Solution {
 
             else{
                 bq += (int)(count / k);
-                count  =0;
+                count  = 0;
             }
         }
         bq += (int)(count / k);
 
-// making more bq if also valid 
+// making more bq if also valid
         if(bq >= m)
         {
             return true;

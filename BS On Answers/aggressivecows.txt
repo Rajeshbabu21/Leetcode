@@ -1,0 +1,84 @@
+
+
+
+
+   class Solution {
+
+    public boolean possibledistance(int[] arr,int distance,int cows)
+    {
+        int cow = 1;
+        int last = arr[0];
+        int n = arr.length;
+
+        for(int i=1;i<n;i++)
+        {
+            if(arr[i] - last > distance)
+            {
+                cow +=1;
+                last = arr[i];
+            }
+        }   
+        if(cow > = cows)
+        {
+            return true;
+        }
+        else{
+            return false
+        }
+    }
+
+    public int AgressiveCows(int[] arr, int cows) {
+        int low = 0;
+        int high = ar[n-1] - arr[0];
+        int ans= -1;
+
+        while(low <= high)
+        {
+            int mid = (low + high) /2;
+
+            if(possibledistance == true)
+            {
+                ans = mid;
+                low = mid +1;
+
+            }
+
+            else{
+                high = mid -1;
+            }
+        }
+        
+    }
+}
+
+
+
+
+class Solution {
+        public int AgressiveCows(int[] arr, int cows) {
+            int n = arr[n-1] - arr[0];
+            int ans =-1;
+            
+            for(int i=0;i<n;i++)
+            {
+                if(possibledistance == true)
+                {
+                    continue;
+
+                }
+
+                else{
+                    return i-1; 
+                }
+                
+            }
+
+
+
+    }
+}
+
+
+
+
+
