@@ -1,0 +1,54 @@
+class Solution {
+
+    public int findceilstarting(int[] nums, int target) {
+
+        int n = nums.length;
+        int startingans = -1;
+
+        int low = 0;
+        int high = n - 1;
+
+        while (low <= high) {
+
+            int mid = (low + high) / 2;
+
+            if (nums[mid] >= target) {
+                startingans = mid;
+                high = mid - 1;
+            }
+            else {
+                low = mid + 1;
+            }
+        }
+
+        return startingans;
+    }
+
+    public int rowWithMax1s(int[][] mat) {
+
+        int countone = 0;
+        int index = -1;
+
+        for (int i = 0; i < mat.length; i++) {
+
+            int firstindex = findceilstarting(mat[i], 1);
+
+            int count;
+
+    // hint udse the chatgpt exmaple 
+            if (firstindex == -1) {
+                count = 0;
+            }
+            else {
+                count = mat[i].length - firstindex;
+            }
+
+            if (count > countone) {
+                countone = count;
+                index = i;
+            }
+        }
+
+        return index;
+    }
+}
