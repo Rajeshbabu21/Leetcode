@@ -20,6 +20,7 @@ class Solution {
                     ans = nums[low]
                     index = low;
                 }
+                // take the index and move to the other side 
                 low = mid+1;
             }
 

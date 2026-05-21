@@ -31,6 +31,7 @@ In no manner can we increase the minimum distance beyond 3.
                 last = arr[i];
             }
         }   
+        
         if(cow > = cows)
         {
             return true;
@@ -53,6 +54,7 @@ In no manner can we increase the minimum distance beyond 3.
             if(possibledistance == true)
             {
                 ans = mid;
+                // we need max function
                 low = mid +1;
 
             }

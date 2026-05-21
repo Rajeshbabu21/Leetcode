@@ -22,6 +22,7 @@ class Solution {
         int n= nums.length;
 
 
+        n = 5 and m= 6
         if(n < m)
         {
             return -1;
@@ -126,10 +127,11 @@ class Solution {
         {
             int boolean findingthpage = findingthpagefunction(nums,i);
 
-            if(findingthpage <= m)
+            if(findingthpage == m)
             {
                 ans = i;
                 break
+                
             }
         }
 

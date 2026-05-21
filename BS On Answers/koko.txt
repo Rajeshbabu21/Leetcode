@@ -54,7 +54,6 @@ class Solution {
             // total += (piles[i] + mid-1) / mid ;
             total += (piles[i] + mid - 1) / mid;
             
-
         }
 
         return total;

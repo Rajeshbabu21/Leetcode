@@ -100,7 +100,7 @@ class Solution {
         for(int i=low;i<=high;i++)
         {
             int findthelargestsum = findthelargestsum(nums,i); 
-            if(findthelargestsum <= k )
+            if(findthelargestsum == k )
             {
                 ans = i;
                 break;
