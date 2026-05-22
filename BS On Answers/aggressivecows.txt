@@ -26,12 +26,16 @@ In no manner can we increase the minimum distance beyond 3.
         for(int i=1;i<n;i++)
         {
             if(arr[i] - last > distance)
+
+            // this we need to maintain the 2 for example 3 - 4 is not possible we neef to go to the another i 
+            if possible move to ppace the cow and track the previous cows 
             {
                 cow +=1;
                 last = arr[i];
             }
         }   
         
+        // if you are possible to plcae the cows greater than the questiion
         if(cow > = cows)
         {
             return true;
@@ -43,7 +47,7 @@ In no manner can we increase the minimum distance beyond 3.
 
     public int AgressiveCows(int[] arr, int cows) {
         Arrays.sort(arr);
-        int low = 0;
+        int low = 1;
         int high = ar[n-1] - arr[0];
         int ans= -1;
 

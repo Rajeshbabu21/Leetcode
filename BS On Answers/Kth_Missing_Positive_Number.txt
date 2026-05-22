@@ -30,6 +30,7 @@ class Solution {
             int mid = (low + high) / 2;
 
             int missing = arr[mid] - (mid + 1);
+            // find greater
             if(missing < k)
             {
                 low = mid +1;
