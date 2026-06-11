@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Solution {
+    public String frequencySort(String s) {
+
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        // Step 1: count frequency
+        for (char ch : s.toCharArray()) {
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch) + 1);
+            } else {
+                map.put(ch, 1);
+            }
+        }
+
+        // Step 2: sort characters by frequency
+        ArrayList<Character> list = new ArrayList<>(map.keySet());
+
+        list.sort((a, b) -> map.get(b) - map.get(a));
+
+        // Step 3: build result string
+        String answer = "";
+
+        for (char ch : list) {
+            int freq = map.get(ch);
+
+            for (int i = 0; i < freq; i++) {
+                answer += ch;
+            }
+        }
+
+        return answer;
+    }
+}

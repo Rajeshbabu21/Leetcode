@@ -1,0 +1,33 @@
+class Solution {
+    public String largestOddNumber(String num) {
+
+        
+        int n = num.length();
+        String ans = "";
+
+        for(int i=n-1;i>=0;i--)
+        {
+            char ch = num.charAt(i);
+            int chInt = ch - '0';
+
+            if(chInt % 2 == 1)
+            {
+                // +1 not include alwys end +1
+                ans = num.substring(0,i+1);
+                break;
+            }
+            else{
+                continue;
+            }
+
+           
+        }
+
+        return ans;
+
+
+
+
+        
+    }
+}

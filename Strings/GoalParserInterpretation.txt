@@ -1,0 +1,15 @@
+class Solution {
+    public String interpret(String command) {
+        String ans = "";
+        String newans = "";
+        String anotherans = "";
+
+
+        ans= command.replace("()","o");
+        newans = ans.replace("(","");
+        anotherans = newans.replace(")","");
+
+        return anotherans;
+        
+    }
+}   

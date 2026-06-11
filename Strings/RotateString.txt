@@ -1,0 +1,37 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+
+        if(s.length() != goal.length())
+        {
+            return false;
+        }
+
+        String[] words = s.split("");
+
+        int n = words.length;
+
+        for(int k = 0; k < n; k++)
+        {
+            // store last character
+            String temp = words[n - 1];
+
+            // shift right
+            for(int i = n - 2; i >= 0; i--)
+            {
+                words[i + 1] = words[i];
+            }
+
+            // place temp at front
+            words[0] = temp;
+
+            String rotated = String.join("", words);
+
+            if(rotated.equals(goal))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
