@@ -8,6 +8,7 @@ class Solution {
         {
             int mid = low + (high - low) / 2;
 
+asnwer 5 is aso poosible the answ is minumum
             boolean divisor = finddivisor(nums,mid,threshold);
 
             if(divisor == true)

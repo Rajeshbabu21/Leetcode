@@ -7,6 +7,17 @@ class Solution {
         int ans = -1;
         int n = bloomDay.length;
 
+bloomDay = [1,2,3,4,5]
+m = 3
+k = 2
+
+Required flowers:
+
+m * k = 3 * 2 = 6
+
+Available:
+
+n = 5
         if(n < m *k )
         {
             return ans;

@@ -13,6 +13,7 @@ class Solution {
             
             if(nums[low] <= nums[mid])
             {
+                // the answer in the other side see the book 
                 ans = Math.min(ans,nums[low]);
                 low = mid+1;
             }

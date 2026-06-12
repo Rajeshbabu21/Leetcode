@@ -30,7 +30,7 @@ class Solution {
             int mid = (low + high) / 2;
 
             int missing = arr[mid] - (mid + 1);
-            // find greater
+            // find greater en na we nned to find the fith the a=we only serch the 3 
             if(missing < k)
             {
                 low = mid +1;
