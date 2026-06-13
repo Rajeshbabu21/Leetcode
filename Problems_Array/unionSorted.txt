@@ -1,0 +1,100 @@
+Input:n = 5,m = 5 arr1[] = {1,2,3,4,5}  arr2[] = {2,3,4,4,5}
+Output: {1,2,3,4,5}
+Explanation: Common Elements in arr1 and arr2  are:  2,3,4,5
+Distnict Elements in arr1 are : 1
+Distnict Elemennts in arr2 are : No distinct elements.
+Union of arr1 and arr2 is {1,2,3,4,5}
+
+
+class Solution {
+    public ArrayList<Integer> UnionNumber(int[] a,int[] b) {
+
+        int n = a.length;
+        int m = b.length;
+
+        Set<Integer> ans = new HashSet<>();
+        ArrayList<Integer> finalans = new ArrayList<>();
+
+        for(int i=0;i<n;i++)
+        {
+            ans.add(a[i]);
+        }
+
+        for(int i=0;i<m;i++)
+        {
+            ans.add(b[i]);
+        }
+
+        
+        for(int arr : ans)
+        {
+            finalans.add(arr);
+        }
+
+        return finalans;       
+    }
+}
+
+
+
+class Solution {
+    public ArrayList<Integer> UnionNumber(int[] a,int[] b) {
+        int n = a.length;
+        int m = b.length;
+
+        ArrayList<Integer> finalans = new ArrayList<>();
+
+        while(i < n && j < )
+
+        return finalans;
+
+        
+    }
+}
+
+
+
+
+
+import java.util.*;
+
+class Solution {
+    // Function to find union of two sorted arrays using two pointers
+    public List<Integer> findUnion(int[] arr1, int[] arr2, int n, int m) {
+        
+        ArrayList<Integer> Union = new ArrayList<>();
+
+        int i = 0, j = 0;
+
+        while (i < n && j < m) {
+            if (arr1[i] <= arr2[j]) {
+                if (Union.isEmpty() || Union.get(Union.size() - 1) != arr1[i])
+                    Union.add(arr1[i]);
+                i++;  
+            }
+
+            else (arr2[j] <= arr1[i]) {
+                if (Union.isEmpty() || Union.get(Union.size() - 1) != arr2[j])
+                    Union.add(arr2[j]);
+                j++;  
+            }
+            
+        }
+
+        while (i < n) {
+            if (Union.isEmpty() || Union.get(Union.size() - 1) != arr1[i])
+                Union.add(arr1[i]);
+            i++;
+        }
+
+        while (j < m) {
+            if (Union.isEmpty() || Union.get(Union.size() - 1) != arr2[j])
+                Union.add(arr2[j]);
+            j++;
+        }
+
+        return Union;
+    }
+}
+
+

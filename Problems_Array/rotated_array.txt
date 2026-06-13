@@ -1,0 +1,89 @@
+Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+
+
+Example 1:
+
+Input: nums = [1,2,3,4,5,6,7], k = 3
+Output: [5,6,7,1,2,3,4]
+
+
+Explanation:
+rotate 1 steps to the right: [7,1,2,3,4,5,6]
+rotate 2 steps to the right: [6,7,1,2,3,4,5]
+rotate 3 steps to the right: [5,6,7,1,2,3,4]
+
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        k = 8, n = 5
+        k = k%n;
+        while(k != 0)
+        {
+            int temp = nums[n-1];
+
+            for(int i = n-1;i>0;i--)
+            {
+                n-2 will be going to n-1
+                nums[i] = nums[i-1];
+            }
+            nums[0] = temp;
+            k--;
+        }
+        
+    }
+}
+
+
+
+
+
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+
+        int rotate = k;
+        rotate %=n;
+
+        // we need to reverse
+        int low = 0;
+        int high = n-1;
+
+        while(low< high)
+        {
+            int temp = nums[low];
+            nums[low] = nums[high];
+            nums[high] = temp;
+            low ++;
+            high--;
+        }
+
+        int lowk = 0;
+        int highk = rotate-1;
+
+        while(lowk < highk)
+        {
+            int temp = nums[lowk];
+            nums[lowk] = nums[highk];
+            nums[highk] = temp;
+            lowk++;
+            highk--;
+        }
+
+        int lowa = rotate;
+        int higha = n-1;
+
+        while(lowa< higha)
+        {
+            int temp = nums[lowa];
+            nums[lowa] = nums[higha];
+            nums[higha] = temp;
+            lowa++;
+            higha--;
+        }
+
+        
+        
+    }
+}
