@@ -27,6 +27,7 @@ Bad case inside, best case outside
 
         for(int i=1;i<n;i++)
         {
+            it is maintainign the danae the given diatrane 
             if(arr[i] - last > distance)
 
             // this we need to maintain the 2 for example 3 - 4 is not possible we neef to go to the another i 

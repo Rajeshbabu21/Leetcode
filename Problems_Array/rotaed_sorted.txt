@@ -1,6 +1,6 @@
 class Solution {
     public boolean check(int[] nums) {
-        if(nums.length  ==1)
+        if(nums.length  == 1)
         {
             return true;
         }

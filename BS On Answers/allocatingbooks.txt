@@ -102,6 +102,7 @@ class Solution {
 
         for(int i=0;i<n;i++)
         {
+            add in a way such if the above the given next student and and assign the pages or else sum +
             if(nums[i]  + pages > i)
             {
                 book+=1;
