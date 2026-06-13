@@ -1,0 +1,53 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        int n = nums.length;
+
+        ArrayList<Integer> zero = new ArrayList<>();
+        ArrayList<Integer> one = new ArrayList<>();
+        ArrayList<Integer> two = new ArrayList<>();
+
+        for(int i : nums)
+        {
+            if(i == 0)
+            {
+                zero.add(i);
+
+            }
+            else if(i == 1)
+            {
+                one.add(i);
+            }
+
+            else{
+                two.add(i);
+            }
+        }
+
+        int index = 0;
+        for(int i : zero)
+        {
+            nums[index] = zero.get(index);
+            index++;
+        }
+
+        int onesizearray = 0;
+        for(int i:one)
+        {
+            nums[index]  = one.get(onesizearray);
+            index++;
+            onesizearray++;
+        }
+
+        int twoizearray = 0;
+        for(int i:two)
+        {
+            nums[index] = two.get(twoizearray);
+            index++;
+            twoizearray++;
+        }
+
+
+
+        
+    }
+}
