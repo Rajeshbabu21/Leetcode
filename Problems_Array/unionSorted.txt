@@ -73,7 +73,7 @@ class Solution {
                 i++;  
             }
 
-            else (arr2[j] <= arr1[i]) {
+            else if(arr2[j] <= arr1[i]) {
                 if (Union.isEmpty() || Union.get(Union.size() - 1) != arr2[j])
                     Union.add(arr2[j]);
                 j++;  
