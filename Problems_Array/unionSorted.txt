@@ -37,20 +37,7 @@ class Solution {
 
 
 
-class Solution {
-    public ArrayList<Integer> UnionNumber(int[] a,int[] b) {
-        int n = a.length;
-        int m = b.length;
 
-        ArrayList<Integer> finalans = new ArrayList<>();
-
-        while(i < n && j < )
-
-        return finalans;
-
-        
-    }
-}
 
 
 
