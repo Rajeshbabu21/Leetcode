@@ -10,7 +10,7 @@ class Solution {
             {
                 int sum = 0;
                 
-                for(int k=i;k<j;k++)
+                for(int k=i;k<=j;k++)
                 {
                     sum += nums[k];
                 }
@@ -46,7 +46,7 @@ class Solution {
                 left;
             }
 
-            if(sum == k)
+            if(sum == k && left <= right)
             {
                 maxlen = Math.max(maxlen,right-left +1);
 
