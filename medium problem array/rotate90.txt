@@ -20,12 +20,7 @@ class Solution {
             {
                 matrix[i][j] = arr[i][j];
             }
-        }
-
-
-
-
-        
+        }    
     }
 }
 
@@ -50,6 +45,7 @@ class Solution {
 
 
     }
+    
     public void rotate(int[][] matrix) {
         int n = matrix.length;
 

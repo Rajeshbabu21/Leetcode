@@ -29,7 +29,6 @@ class Solution {
 
 
 
-
 class Solution {
     public int LongestSubArraySum(int[] nums) {
 
@@ -43,7 +42,7 @@ class Solution {
             while(left <= right && sum > k)
             {
                 sum -= nums[left];
-                left;
+                left++;
             }
 
             if(sum == k && left <= right)
