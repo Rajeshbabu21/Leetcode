@@ -1,0 +1,55 @@
+class Solution {
+    public void qs(int[] arr,int low,int high)
+    {
+        // this means greater than one el
+        if(low < high)
+        {
+            int pivot = partition(arr,low,high);
+            qs(arr,low,pivot-1);
+            qs(arr,pivot+1,high);
+
+
+        }
+    }
+
+    public int partition(int[] arr, int low,int high){
+        int pivot = arr[low];
+        int i = low;
+        int j= high;
+
+        while(i <j)
+        {
+            while(arr[i] <= pivot && i<= high)
+            {
+                i++;
+            }
+            while(arr[j] > pivot && j>=low)
+            {
+                j++;
+            }
+            if(i <j)
+        {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        }
+
+        int temp = arr[low];
+        arr[low] = arr[j];
+        arr[j] = temp;
+        return j;
+
+        
+    }
+    
+    public void quick_sort(int[] arr) {
+        int n = nums.length;
+        int low =0;
+        int high = n-1;
+
+        qs(arr,low,high);
+    
+
+    }
+}
