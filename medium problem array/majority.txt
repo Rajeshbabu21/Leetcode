@@ -16,7 +16,7 @@ class Solution {
 
             if(count > n/2)
             {
-                return nums[i];
+                return nums[i]; 
             }
         }
         return -1;
@@ -52,6 +52,8 @@ class Solution {
 
         int count1= 0;
 
+
+// this is for find the the el 
         for(int i=0;i<n;i++)
         {
             if(nums[i] == el)

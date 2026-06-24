@@ -1,0 +1,104 @@
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        int n = nums.length;
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        for(int i=0;i<n;i++)
+        {
+            if(ans.isEmpty()|| !ans.contains(nums[i]))
+            {
+
+            
+            int count = 0;
+            for(int j=0;j<n;j++)
+            {
+                if(nums[i] == nums[j])
+                {
+                    count+=1;
+                }
+            }
+
+            if(count > n/3)
+            {
+                ans.add(nums[i]);
+            }
+            }
+        }
+
+        return ans;
+
+        
+    }
+}
+
+
+
+
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        int n = nums.length;
+
+        int count1 = 0;
+        int el1 = -1;
+
+        int count2 = 0;
+        int el2 = -1;
+
+        for(int i=0;i<n;i++)
+        {
+            if(count1 == 0 && nums[i] != el2)
+            {
+                count1++;
+                el1 = nums[i];
+            }
+            else if(count2 == 0 && nums[i] != el1)
+            {
+                count2++;
+                el2 = nums[i];
+            }
+            else if(nums[i] == el1)
+            {
+                count1++;
+            }
+            else if(nums[i] == el2)
+            {
+                count2++;
+            }
+            else{
+                count1--;
+                count2--;
+            }
+        }
+
+        int countex1=0;
+        int countex2=0;
+        ArrayList<Integer> ans = new ArrayList<>();
+
+
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i] == el1)
+            {
+                countex1++;
+            }
+            if(nums[i] == el2)
+            {
+                countex2++;
+            }
+        }
+
+        if(countex1 > n/3)
+        {
+            ans.add(el1);
+        }
+        if(countex2 > n/3)
+        {
+            ans.add(el2);
+        }
+        return ans;
+
+  
+    }
+}
+
+
