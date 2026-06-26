@@ -1,0 +1,87 @@
+class Solution {
+    public int beautySum(String s) {
+        int n = s.length();
+        String ans = "";
+        int beauty = 0;
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i;j<n;j++)
+            {
+                String sub = s.substring(i,j+1);
+                HashMap<Character, Integer> ansmap = new HashMap<>();
+                for(int k=0;k<sub.length();k++)
+                {
+                    char ch = sub.charAt(k);
+
+                    if(ansmap.containsKey(ch))
+                    {
+                        ansmap.put(ch,ansmap.get(ch)+1);
+                    }
+                    else{
+                        ansmap.put(ch,1);
+                    }
+                }
+                
+                int minFreq = Integer.MAX_VALUE;
+                int maxFreq= Integer.MIN_VALUE;
+
+                for (int freq : ansmap.values()) {
+                    maxFreq = Math.max(maxFreq, freq);
+                    minFreq = Math.min(minFreq, freq);
+                }
+
+                beauty += (maxFreq - minFreq);
+
+
+
+
+
+            }
+        }
+
+        return beauty;
+
+
+        
+    }
+}
+
+
+
+
+class Solution {
+
+    public int getMinCount(int[] freq) {
+        int minCount = Integer.MAX_VALUE;
+        for (int i = 0; i <26; i++) {
+            if (freq[i] != 0) {
+                minCount = Math.min(minCount, freq[i]);
+            }
+        }
+        return minCount;
+    }
+
+    public int getMaxCount(int[] freq) {
+        int maxCount = 0;
+        for (int i = 0; i <26; i++) {
+            maxCount = Math.max(maxCount, freq[i]);
+        }
+        return maxCount;
+    }
+
+    public int beautySum(String s) {
+        int sum = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int[] freq = new int[26]; //0
+            for (int j = i; j < s.length(); j++) {
+
+                // freq[2]++; this is updae and the cureewnt alphabets count in the substring
+                freq[s.charAt(j) - 'a']++;
+                int beauty = getMaxCount(freq) - getMinCount(freq);
+                sum += beauty;
+            }
+        }
+        return sum;
+    }
+}

@@ -1,0 +1,15 @@
+Pattern:
+Array + HashSet
+
+Recognition:
+Need to know if I've already seen a number.
+
+Brute Force:
+Compare every pair.
+Time: O(n²)
+Space: O(1)
+
+Optimal:
+Use HashSet to store visited numbers.
+Time: O(n)
+Space: O(n)

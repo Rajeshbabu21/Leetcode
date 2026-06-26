@@ -46,6 +46,7 @@ class Solution {
                 count--;
             }
 
+// inner parentheses
             if((s.charAt(i) == '(' && count > 1) || (s.charAt(i) == ')' && count > 0)  )
             {
                 result+=s.charAt(i);
