@@ -59,7 +59,7 @@ class Solution {
 
 
 
-// deletion of tail
+// deletion of position k
 class Solution {
     public void deleteNode(Node head,int k) {
 
@@ -100,3 +100,65 @@ class Solution {
     }
 } 
 
+
+
+
+// deletion of element 
+class Solution {
+    public void deleteNode(Node head,int el) {
+
+
+// for one and zer oelement 
+        if(head == null)
+        {
+            return head;
+        }
+
+// this is head
+        if(temp.data == el)
+        {
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+            return head;
+        }
+        
+
+        Node temp = head;
+        Node prev  = head;
+        // to reach the last element
+        while(temp.data= el)
+        {
+
+            if(temp.data == el)
+            {
+                prev.next = temp.next;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+
+        return head;
+
+        
+    }
+} 
+
+
+
+delete the only the node 
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next= node.next.next;
+        
+    }
+}

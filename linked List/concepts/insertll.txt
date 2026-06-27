@@ -1,0 +1,112 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+
+    Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
+
+// Insertion of head 
+class Solution {
+    public void Insert(Node node,int el) {
+        Node temp = new Node(el);
+        temp.next = head;
+        return temp;
+        
+    }
+} 
+
+
+
+
+// Insertion of position
+class Solution {
+    public void Insert(Node node,int el,int k ) {
+        if(head == null)
+        {
+            
+            if(k ==1)
+            {
+                return Node nn = new Node(el,null);
+            }
+            else{
+                return null;
+            }
+        }
+
+        if(k ==1)
+        {
+            Node temp = new Node(el);
+            temp.next = head;
+            return temp;
+        }
+
+        Node temp = head;
+        int count = 0;
+
+        // for this we nned to till the end 
+        while(temp != null)
+        {
+            count++;
+            if(count == k-1 )
+            {
+                Node nn = new Node(el);
+                nn.next = temp.next;
+                temp.next = nn;
+            }
+        temp = temp.next;
+        }
+        return head;
+    }
+} 
+
+
+
+
+
+// Insertion of value 
+class Solution {
+    public void Insert(Node node,int el,int x) {
+        if(head == null)
+        {
+            
+            return null;
+        }
+
+        if(head.data == x)
+        {
+            Node temp = new Node(el);
+            temp.next = head;
+            return temp;
+        }
+
+        Node temp = head;
+        Node prev  = head;
+
+        // for this we nned to till the end 
+        while(temp != null)
+        {
+
+            if(temp.data == x )
+            {
+                Node nn = new Node(el);
+                nn.next = temp;
+                prev.next = nn;
+                break;
+            }
+            prev = temp;
+        temp = temp.next;
+        return head;
+        }
+        
+    }
+} 
+
