@@ -1,0 +1,102 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+
+    Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
+
+// deletion of head 
+class Solution {
+    public void deleteNode(Node node) {
+
+        if(head == null)
+        {
+            return null;
+        }
+        
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        return head;
+
+        
+    }
+} 
+
+
+
+// deletion of tail
+class Solution {
+    public void deleteNode(Node node) {
+
+
+// for one and zer oelement 
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        
+        while(temp.next.next != null)
+        {
+            temp = temp.next;
+        }
+        temp.next = null;
+
+        return head;
+
+        
+    }
+} 
+
+
+
+// deletion of tail
+class Solution {
+    public void deleteNode(Node head,int k) {
+
+
+// for one and zer oelement 
+        if(head == null)
+        {
+            return null;
+        }
+
+// this is head
+        if(k == 1)
+        {
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+            return head;
+        }
+        
+        int count = 0;
+        Node temp = head;
+        Node prev  = head;
+        // to reach the last element
+        while(temp!= null)
+        {
+            count++;
+            if(count == k)
+            {
+                prev.next = temp.next;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+
+        return head;
+
+        
+    }
+} 
+
