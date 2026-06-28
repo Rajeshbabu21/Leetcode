@@ -1,0 +1,174 @@
+class Node {
+    int data;
+    Node next;
+    Node back
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+         this.back = null;
+    }
+
+    Node(int data, Node next,Node back) {
+        this.data = data;
+        this.next = next;
+         this.back = back;
+    }
+}
+
+
+// deletion of head 
+class Solution {
+    public void deleteNodehead(Node node) {
+
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        
+        Node prev = head;
+        head = head.next;
+        head.back = null;
+        prev.next = null;
+        
+
+        
+    }
+} 
+
+
+// deletion of tail
+class Solution {
+    public void deleteNodehead(Node node) {
+
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        
+        Node prev = head;
+        Node temp = head;
+
+        while(temp.next != null)
+        {
+            prev= temp;
+            temp = temp.next;
+ 
+        }
+        temp.back = null;
+        prev.next = null;
+        
+
+        
+    }
+} 
+
+
+
+
+// deletion of kth position 
+class Solution {
+    public void deleteNodehead(Node node) {
+
+        Node temp =head;
+        Node prev = head;
+        int count  =0;
+
+        while(temp.next != null)
+        {
+            count ++;
+            if(count == k)
+            {
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        Node front = temp.next;
+
+        prev.next = front;
+        front.back = prev;
+        temp.next = null;
+        temp.back = null;
+
+        if(prev == null && front == null)
+        {
+            // only onr node 
+
+            return null;
+        }
+
+        // if it is head
+        else if(prev == null)
+        {
+            Node prev1 = head;
+            head= head.next;
+            prev1.next = null;
+            head.back = null; 
+        }
+
+        // tail
+        else if (front == null)
+        {
+            Node temp1 = null;
+            prev2 = temp;
+
+            while(temp!= null)
+            {
+                prev2 = temp,+;
+                temp = temp.net;
+            }
+            temp.back = null;
+            prev.next = null
+        }
+
+
+
+        
+        
+
+        
+    }
+} 
+
+
+
+
+// deletion of Node given
+class Solution {
+    public void deleteNodehead(Node node) {
+
+        if(head == null)
+        {
+            return null;
+        }
+
+        Node temp = head;
+        Node prev = head;
+
+        while(temp.data != el)
+        {
+            prev = temp;
+            temp = temp.next;
+        }
+
+        Node front  = temp.next;
+        prev.next = front;
+        front.back = prev;
+        temp.back = null;
+        temp.next = null;
+
+        if(front == null)
+        {
+            // it is in the tail node 
+            prev.next = null;
+            temp.back= null;
+        }
+
+        
+        
+        }
+
+}
+
+

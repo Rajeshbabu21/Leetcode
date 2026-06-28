@@ -1,0 +1,81 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public int countll(ListNode head)
+    {
+        ListNode temp = head;
+        int count = 0;
+        while(temp != null)
+        {
+            count++;
+            temp = temp.next;
+        }
+        return count;
+
+    }
+    public ListNode middleNode(ListNode head) {
+        ListNode temp = head;
+        int length  = countll(head);
+        int ans;
+
+        if(length % 2 == 0)
+        {
+            ans = (length /2) +1;
+        }
+        else{
+            ans = (length /2) +1;
+        }
+
+        int lengthcount = 0;
+        while(temp != null)
+        {
+            lengthcount++;
+            if(lengthcount == ans)
+            {
+                return temp;
+            }
+            temp = temp.next;
+
+        }
+
+        return null;
+   
+    }
+}
+
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    
+    public ListNode middleNode(ListNode head) {
+        Node slow  = head;
+        Node fast = head;
+
+// this is for even and odd
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+        
+    }
+}

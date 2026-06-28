@@ -1,0 +1,137 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+
+    Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
+
+// Insertion before the head 
+class Solution {
+    public void deleteNode(Node node) {
+
+        if(head == null)
+        {
+            return new  Node(el,null,null);
+        }
+        
+        Node temp = new Node(el);
+        head.back = temp;
+        temp.next = head;
+        temp.back  = null; 
+
+        
+    }
+} 
+
+
+// Insertion before tail Node 
+class Solution {
+    public void deleteNode(Node node) {
+
+        if(head == null)
+        {
+            return null
+        }
+
+        if(head.next == null)
+        {
+            Node nn = new Node(el);
+            nn.back = null;
+            nn.next = head;
+            head.back = nn;
+        }
+        
+        Node temp = head;
+        while(temp.next != null)
+        {
+            temp = temp.next;
+        }
+        Node prev = temp.back;
+        Node nn = new Node(el);
+        nn.next = temp;
+        nn.back = prev;
+        prev.next = nn;
+        temp.back = nn;
+
+        
+    }
+} 
+
+
+// Insertion  at kth position 
+class Solution {
+    public void deleteNode(Node node) {
+
+        if(head == null)
+        {
+            return null
+        }
+
+        if(k ==1)
+        {
+            Node nn = new Node(el);
+            nn.back = null;
+            nn.next = head;
+            head.back = nn;
+        }
+        
+        Node temp = head;
+        int count = 0;
+        while(temp != null)
+        {
+            count ++;
+            if(count == k)
+            {
+                break;
+            }
+            temp = temp.next;
+        }
+        Node prev = temp.back;
+        Node nn = new Node(el);
+        nn.next = temp;
+        nn.back = prev;
+        prev.next = nn;
+        temp.back = nn;
+
+        
+    }
+} 
+
+
+
+// Insertion before given node  Node 
+class Solution {
+    public void deleteNode(Node node) {
+
+        if(head == null)
+        {
+            return null
+        }
+
+        
+        Node temp = head;
+        while(temp.data != el)
+        {
+            temp = temp.next;
+        }
+        Node prev = temp.back;
+        Node nn = new Node(el);
+        nn.next = temp;
+        nn.back = prev;
+        prev.next = nn;
+        temp.back = nn;
+
+        
+    }
+} 
+
+

@@ -1,15 +1,18 @@
+Problem:
+
 Pattern:
-Array + HashSet
 
 Recognition:
-Need to know if I've already seen a number.
+(What clue in the question led to this approach?)
 
 Brute Force:
-Compare every pair.
-Time: O(n²)
-Space: O(1)
+(1–2 lines)
+Time:
+Space:
 
 Optimal:
-Use HashSet to store visited numbers.
-Time: O(n)
-Space: O(n)
+(1–2 lines)
+Time:
+Space:
+
+Mistake I Made:

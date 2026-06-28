@@ -1,0 +1,54 @@
+class Node {
+    int data;
+    Node next;
+    Node back;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+        this.back = null;
+    }
+
+    Node(int data, Node next,Node back) {
+        this.data = data;
+        this.next = next;
+        this.back = back;
+    }
+}
+
+public class Main {
+
+    
+
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+
+        Node head= new Node(arr[0]);
+        head.next = null;
+        head.back = null;
+
+// to map the prev pointer 
+        Node prev = head
+
+        for(int i=1;i<n;i++)
+        {
+            // create the node
+            Node temp = new Node(arr[i]);
+
+            // next is null
+            temp.next = null;
+
+            // temp's back is prev
+            temp.back = prev;
+
+            // prev is temp
+            prev.next = temp;\
+
+            // this moves for every el
+            prev = temp;
+        }
+
+
+    }
+} 
