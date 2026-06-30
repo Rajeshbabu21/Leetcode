@@ -1,0 +1,94 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        Stack<Integer> ans = new Stack<>();
+
+        ListNode temp = head;
+        while(temp != null)
+        {
+            ans.push(temp.val);
+            temp = temp.next;
+        }
+
+        temp = head;
+
+        while(temp != null)
+        {
+            if(temp.val != ans.pop())
+            {
+                return false;
+
+            }
+            temp = temp.next;
+        }
+
+        return true;
+    }
+}
+
+
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+
+    public ListNode middleelment(ListNode head){
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return slow;
+
+    }
+    public boolean isPalindrome(ListNode head) {
+        ListNode temp = head;
+
+        ListNode middle = middleelment(head);
+        ListNode slowNode = middle;
+        ListNode prev = null;
+
+        while(slowNode != null)
+        {
+            ListNode front = slowNode.next;
+            slowNode.next = prev;
+            prev = slowNode;
+            slowNode = front;
+        }
+
+        while(prev != null)
+        {
+            if(temp.val != prev.val)
+            {
+                return false;
+            }
+            temp = temp.next;
+            prev = prev.next;
+        }
+        return true;
+        
+    }
+}

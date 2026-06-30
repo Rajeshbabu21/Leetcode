@@ -1,0 +1,75 @@
+class Solution {
+
+    public int   Lengthofthelist(ListNode head) {
+        ListNode temp =head;
+        Map<ListNode,Integer> ans = new HashMap<>();
+
+        while(temp != null)
+        {
+            if(ans.containsKey(temp))
+            {
+                int count = 1;
+                // not in the suddenly the stop so start from the next
+                ListNode start = temp.next;
+                while(start != temp)
+                {
+                    count++;
+                    start = start.next;
+                }
+
+                return count;
+            }
+            else{
+                ans.put(temp,1);
+            }
+            temp = temp.next;
+        }
+
+        return null;
+    
+
+        
+
+    }
+
+}
+
+
+
+
+
+class Solution {
+
+    public int   Lengthofthelist(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.next;
+            fast = fast.next.next;
+
+// we find the loop 
+            if(slow == fast)
+            {
+                int count = 1;
+                slow = slow.next;
+                while(slow != fast)
+                {
+                    count++;
+                    slow = slow.next;
+
+                }
+                return count;
+            }
+        }
+
+        return null;
+
+
+    }
+
+}
+
+
+
