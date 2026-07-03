@@ -1,0 +1,65 @@
+// Node class for the doubly linked list
+class Node {
+    int data;
+    Node back;
+    Node next;
+
+    // Constructor to initialize node with a value
+    Node(int val) {
+        data = val;
+        back = null;
+        next = null;
+    }
+}
+
+
+Input: head -> 1 <-> 2 <-> 3 <-> 1 <-> 4, target = 1
+
+Output: head -> 2 <-> 3 <-> 4
+Input: head -> 2 <-> 3 <-> -1 <-> 4 <-> 2, target = 2
+
+Output: head -> 3 <-> -1 <-> 4
+
+// Solution class containing all operations on the doubly linked list
+class Solution {
+    
+    public Node deleteTargetNodes(Node head, int target) {
+
+        Node temp = head;
+
+
+
+        Node temp =head;
+
+        while(temp != null)
+        {
+            if(temp.data == target)
+            {
+                Node prev = temp.back;
+                Node front = temp.next;
+
+                if(prev == null)
+                {
+                    head = front;
+                    if(front != null)
+                    {
+                        front.back;
+                    }
+                }
+                else{
+                    prev.next = front;
+                    if(front.back != null)
+                    {
+                        front.back = prev;
+                    }
+                }
+                
+            }
+        }
+
+
+        
+
+    }
+}
+

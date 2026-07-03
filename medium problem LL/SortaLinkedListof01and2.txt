@@ -1,0 +1,130 @@
+class Solution {
+    void sortZeroOneTwo(LinkedList ll) {
+        // Input: 1 -> 2 -> 0 -> 1 -> 0 -> 2 -> NULL
+        // Output: 0 -> 0 -> 1 -> 1 -> 2 -> 2 -> NULL
+        ArrayList<Integer> zero = new ArrayList<>();
+        ArrayList<Integer> one = new ArrayList<>();
+        ArrayList<Integer> two = new ArrayList<>();
+        ListNode temp = ll.head;
+
+        while(temp != null)
+        {
+            if(temp.val == 0)
+            {
+                zero.add(temp.val);
+
+            }
+            else if(temp.val == 1)
+            {
+                one.add(temp.val);
+            }
+            else{
+                two.add(temp.val);
+            }
+            temp = temp.next;
+        }
+
+
+        temp = head;
+
+for (int x : zero) {
+    temp.val = x;
+    temp = temp.next;
+}
+
+for (int x : one) {
+    temp.val = x;
+    temp = temp.next;
+}
+
+for (int x : two) {
+    temp.val = x;
+    temp = temp.next;
+}
+           
+            
+    }
+}
+
+
+
+
+
+
+// Solution class contains merge sort logic
+class Solution {
+    public Node middleNode(Node head){
+        Node slow  =head;
+        Node fast= head.next;
+
+        Node temp = head;
+
+        while(fast != null && fast.next != null)
+        {
+            slow = slow.nexxt;
+            fast = fast.next.next;;
+
+        }
+        return slow;
+    }
+
+    public Node mergesort123(Node left,Node right)
+    {
+        Node dummy = new Node(-1,null);
+        Node temp = dymmy;
+
+        while(left != null && right != null)
+        {
+            if(left.data <= right.data)
+            {
+                temp.next = left;
+                left = left.next;
+            }
+            else{
+                temp.next = right;
+                right = rigth.next;
+            }
+
+            temp = tem.next;
+        }
+
+        if(left != null)
+        {
+            temp.next = left;
+
+        }
+        else{
+            temp.next = right;
+            
+        }
+
+        return dummy.next;
+    }
+
+    
+    public Node sortLL012(Node head) {
+        if(head == null || head.next == null)
+        {
+            return head;
+        }
+
+        Node middle = middleNode(head);
+
+        Node left = head;
+        Node right = middle.new;
+        middle.next = null;
+
+        left = sortLL012(left);
+        right = sortLL012(right);
+
+        return mergesort123(left,right);
+
+
+        
+    }
+}
+
+
+
+   
+
