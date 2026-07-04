@@ -1,0 +1,60 @@
+class Solution {
+
+    public ListNode reversehead(ListNode head) {
+
+        ListNode temp = head;
+        ListNode prev = null;
+
+        while(temp != null)
+        {
+            ListNode front = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp =front;
+        }
+
+        return prev;
+    }
+
+    public ListNode addOneNumbers(ListNode head) {
+
+        ListNode reversehead = removeNode(head);
+
+        ListNode temp = head;
+        int carry = 1;
+
+        while(temp != null)
+        {
+            temp.data = temp.data + carry;
+
+            if(temp.data < 10)
+            {   
+                carry = 0;
+                break;
+
+            }
+            else{
+                temp.data = 0;
+                carry =1
+            }
+            temp = temp.next;
+        }
+
+        if(carry == 1)
+        {
+            ListNode reversehead = removeNode(head);
+            ListNode nn = new ListNode(carry);
+            nn.next = head;
+            return nn;
+            
+        }
+        else{
+            ListNode reversehead = removeNode(head);
+            return nn;
+        }
+
+    }
+}
+
+
+
