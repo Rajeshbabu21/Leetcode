@@ -1,0 +1,72 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int n = height.length;
+        int width= 0;
+        int heights = 0;
+        int ans = Integer.MIN_VALUE;
+        int area = 0;
+
+
+        for(int i=0;i<n;i++)
+        {
+            for(int j = i+1;j<n;j++)
+            {
+                width = j - i;
+                heights = Math.min(height[j],height[i]);
+
+                area = width * heights;
+                ans = Math.max(area,ans);
+            }
+            
+        }
+
+        return ans;
+    }
+}
+
+
+
+class Solution {
+    public int maxArea(int[] height) {
+        int n = height.length;
+
+        int low = 0;
+        int width= 0;
+        int heights = 0;
+        int ans = Integer.MIN_VALUE;
+        int area = 0;
+
+        int high = height.length-1;
+
+        while(low < high)
+        {
+            width = high - low;
+            heights = Math.min(height[high],height[low]);
+            area = width*heights;
+
+            ans = Math.max(area,ans);
+
+            if(height[low] < height[high])
+            {
+                low++;
+            }
+            else{
+                high--;
+            }
+
+
+
+        }
+
+        return ans;
+
+        
+
+
+
+
+
+
+        
+    }
+}
