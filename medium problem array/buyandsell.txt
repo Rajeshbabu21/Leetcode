@@ -11,10 +11,7 @@ class Solution {
                 maxprofit = Math.max(maxprofit,profit);
             }
         }
-
         return maxprofit;
-
-        
     }
 }
 
@@ -33,6 +30,5 @@ class Solution {
             minel = Math.min(prices[i],minel);
         }
         return maxprofit;
-        
     }
 }
