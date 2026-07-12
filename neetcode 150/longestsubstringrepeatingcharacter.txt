@@ -1,0 +1,29 @@
+class Solution {
+    public int characterReplacement(String s, int k) {
+        int maxlen = 0;
+        int n = s.length();
+
+        for(int i=0;i<n;i++)
+        {
+            int[] frq = new int[26];
+            int  mxfrq= 0;
+
+            for(int j=i;j<n;j++)
+            {
+                frq[s.charAt(j)-'A']++;
+                mxfrq = Math.max(mxfrq,frq[s.charAt(j)-'A']);
+                int windowSize = j - i + 1;
+                int replacements = windowSize - mxfrq;
+
+                if(replacements <= k)
+                {
+                    maxlen= Math.max(maxlen,windowSize);
+                }
+
+            }
+        }
+
+        return maxlen;
+        
+    }
+}
