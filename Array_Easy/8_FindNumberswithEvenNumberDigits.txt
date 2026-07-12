@@ -1,0 +1,27 @@
+class Solution {
+    public int findNumbers(int[] nums) {
+
+        int i = 0;
+        int wholecount = 0;
+        for(int num : nums)
+        {
+            int count = 0;
+            while(num > 0)
+            {
+                num = num/10;
+                count+=1;
+            }
+
+            if(count %2 == 0)
+            {
+                wholecount+=1;   
+            }
+        }
+
+        return wholecount;
+
+
+
+        
+    }
+}

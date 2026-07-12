@@ -1,0 +1,44 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+
+        int j=0;
+        for(int i=1;i<n;i++)
+        {
+            if(nums[j] != nums[i])
+            {
+                nums[j+1] = nums[i];
+                j++;
+          }
+        }
+        return j+1;
+        
+    }
+}
+
+
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int n = nums.length;
+        TreeSet<Integer> ans = new TreeSet<>();
+
+        for(int num : nums)
+        {
+            ans.add(num);
+        }
+
+        int i = 0;
+        for (int num : ans) {
+            nums[i] = num;
+            i++;
+        }
+
+        
+
+        return ans.size();
+
+
+        
+    }
+}
