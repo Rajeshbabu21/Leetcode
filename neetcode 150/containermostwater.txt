@@ -70,3 +70,17 @@ class Solution {
         
     }
 }
+
+
+
+Non-decreasing Order
+
+An array is in non-decreasing order if every element is less than or equal to the next element.
+
+Mathematically:
+
+nums[i] <= nums[i + 1]
+
+Notice the <= (less than or equal to).
+
+This means duplicates are allowed.

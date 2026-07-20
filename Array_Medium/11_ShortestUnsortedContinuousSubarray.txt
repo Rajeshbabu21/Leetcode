@@ -1,0 +1,35 @@
+class Solution {
+    public int findUnsortedSubarray(int[] nums) {
+        int n = nums.length;
+        int firstindex = -1;
+        int lastindex = -1;
+        ArrayList<Integer> ans  = new ArrayList<>();
+
+        for(int i : nums)
+        {
+            ans.add(i);
+        }
+        Collections.sort(ans);
+        
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i] != ans.get(i))
+            {
+                if(firstindex == -1)
+                {
+                    firstindex = i;
+                }
+
+                lastindex = i;
+            }
+        }
+
+        if(firstindex == -1)
+        {
+            return 0;
+        }
+
+        return lastindex - firstindex +1;
+        
+    }
+}
